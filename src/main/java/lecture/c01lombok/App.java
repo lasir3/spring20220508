@@ -35,6 +35,7 @@ public class App {
 		System.out.println(o4);
 		
 		JavaBeans4 o5 = new JavaBeans4();
+		System.out.println(o5);
 		
 	}
 }
