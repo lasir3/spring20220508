@@ -15,15 +15,15 @@
 	
 	<context:property-placeholder location="classpath:jdbc.properties"/>
 	
-	<bean id="dataSource" class="corg.mariadb.jdbc.MariaDbPoolDataSource">
+	<bean id="dataSource" class="org.mariadb.jdbc.MariaDbPoolDataSource" destroy-method="close">
 		<property name="url" value="${db.fullUrl}"></property>
 	</bean>
 	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.sqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
-	<mybatis-spring:scan base-package="org.zerock.mapper"></mybatis-spring:scan>
+	<mybatis-spring:scan base-package="com.zerock.mapper"></mybatis-spring:scan>
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
