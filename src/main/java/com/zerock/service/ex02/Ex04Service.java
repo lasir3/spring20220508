@@ -3,6 +3,7 @@ package com.zerock.service.ex02;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.zerock.controller.ex09.CustomerDto;
 import com.zerock.mapper.ex02.Ex02Mapper;
 
 @Service
@@ -21,6 +22,10 @@ public class Ex04Service {
 		String firstName = mapper.selectFisrtNameById(id);
 		
 		return firstName;
+	}
+
+	public CustomerDto getCustomerInfoById(int id) {
+		return mapper.selectCustomerById(id);
 	}
 	
 }

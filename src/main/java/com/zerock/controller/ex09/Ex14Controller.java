@@ -40,4 +40,12 @@ public class Ex14Controller {
 		
 		model.addAttribute("firstName", firstName);
 	}
+	
+	// /ex14/sub03?id=3
+	@RequestMapping("sub03")
+	public void method03(int id, Model model) {
+		CustomerDto dto = service.getCustomerInfoById(id);
+		
+		model.addAttribute("customer", dto);
+	}
 }
