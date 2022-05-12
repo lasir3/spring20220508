@@ -11,11 +11,11 @@
 	
 	<h1>직원 등록</h1>
 	<form action="${pageContext.request.contextPath }/ex14/sub06" method="post">
-		<input type="text" name="firstName" value="donald"/> <br />
-		<input type="text" name="lastName" value="trump"/> <br />
-		<input type="date" name="birthDate" value="1990-12-12"/> <br />
-		<input type="text" name="photo" value="EmpID.pic"/> <br />
-		<input type="text" name="notes" value="President of The United State of the America"/> <br />
+		First Name : <input type="text" name="firstName" value="donald"/> <br />
+		Last Name : <input type="text" name="lastName" value="trump"/> <br />
+		BirthDate : <input type="date" name="birthDate" value="1990-12-12"/> <br />
+		Photo : <input type="text" name="photo" value="EmpID.pic"/> <br />
+		Notes : <textarea name="notes"  id="" cols="30" rows="10">President of The United State of the America</textarea> <br />
 		<button>등록</button>
 	</form>
 	
