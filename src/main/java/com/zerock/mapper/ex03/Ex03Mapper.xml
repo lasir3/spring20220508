@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zerock.mapper.ex03.Ex03Mapper">
+  <select id="selectCustomerNameById" resultType="String">
+    SELECT CustomerName FROM Customers WHERE CustomerId = #{id}
+  </select>
+  <select id="selectEmployeeNameById" resultType="String">
+    SELECT FirstName FROM Employees WHERE EmployeeId = #{id}
+  </select>
+</mapper>
