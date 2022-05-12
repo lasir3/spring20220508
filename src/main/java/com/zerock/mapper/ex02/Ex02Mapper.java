@@ -1,10 +1,13 @@
 package com.zerock.mapper.ex02;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.zerock.controller.ex09.CustomerDto;
-import com.zerock.controller.ex09.EmployeeDto;
+import com.zerock.domain.ex01.CustomerDto;
+import com.zerock.domain.ex01.EmployeeDto;
 
 public interface Ex02Mapper {
 	
@@ -36,5 +39,28 @@ public interface Ex02Mapper {
 			+ " (LastName, FirstName, BirthDate, Photo, Notes) "
 			+ " VALUES (#{lastName}, #{firstName}, #{birthDate}, #{photo}, #{notes})")
 	int insertEmployee(EmployeeDto employee);
+	
+	@Select("SELECT EmployeeID id, FirstName, LastName, Photo, Notes, BirthDate "
+			+ "FROM Employees ORDER BY EmployeeID")
+	List<EmployeeDto> listEmployee();
+	
+	@Select("SELECT CustomerID id, CustomerName, ContactName, Address, City, PostalCode, Country "
+			+ "FROM Customers ORDER BY CustomerID")
+	List<CustomerDto> listCustomer();
+
+	
+	@Select("SELECT CustomerID id, "
+			+ "CustomerName, "
+			+ "ContactName, "
+			+ "Address, "
+			+ "City, "
+			+ "PostalCode, "
+			+ "Country "
+			+ "FROM Customers "
+			+ "LIMIT #{from}, #{row}")
+	List<CustomerDto> listCustomerPage(@Param("from") int from, @Param("row") int row);
+	
+	@Select("SELECT Count(CustomerId) FROM Customers ")
+	int countCustomers();
 
 }
