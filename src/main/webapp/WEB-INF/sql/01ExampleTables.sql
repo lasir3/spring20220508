@@ -21,9 +21,7 @@ SELECT * FROM Customers; -- 91개
 SELECT * FROM Employees; -- 10개
 
 SELECT * FROM Customers ORDER BY CustomerID DESC;
-
 DELETE FROM Customers WHERE CustomerID = 93;
 
-INSERT INTO Employees (LastName, FirstName, Photo, Notes) Values ('donald', 'trump', 'empl.po', 'presidet');
-
 SELECT * FROM Employees ORDER BY EmployeeID DESC;
+DELETE FROM Employees WHERE EmployeeID = 14;
