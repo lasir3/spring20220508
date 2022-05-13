@@ -47,7 +47,7 @@ public class Ex15Controller {
 		System.out.println(list.size());
 	}
 	
-	@GetMapping("board/{id}")
+	@GetMapping("board/{id}") // 책 366쪽
 	public String getBoard(@PathVariable("id") int id, Model model) {
 		System.out.println(id);
 		
@@ -84,5 +84,25 @@ public class Ex15Controller {
 		}
 		
 		return "redirect:/ex15/board/list";
+	}
+	
+	@GetMapping("board/wirte")
+	public void writeBoard() {
+		
+	}
+	
+	@PostMapping("board/write")
+	public String writeBoardProcess(BoardDto board) {
+		boolean success = service.addBaord(board);
+		
+		if (success) {
+			
+		} else {
+			
+		}
+		
+		int id = 1;
+		
+		return "redirect:/ex15/board" + board.getId();
 	}
 }

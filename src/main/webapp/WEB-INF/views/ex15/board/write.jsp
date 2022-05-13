@@ -10,37 +10,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:url value="/ex15/board/write" var="writeLink"></c:url>
-	<h1><a href="${writeLink }">글쓰기</a></h1>
-
-	<h1>글 목록</h1>
 	
-	<table class="table">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>title</th>
-				<th>inserted</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${boardList }" var="board">
-				<tr>
-					<td>${board.id }</td>
-					
-					<td>
-						<c:url value="/ex15/board/${board.id }" var="link"></c:url>
-						<a href="${link }">
-							${board.title }
-						</a>
-						
-					</td>
-					<td>${board.title }</td>
-					<td>${board.inserted }</td>
-				</tr>
-			</c:forEach>
-
-		</tbody>
-	</table>
+	<h1>글 작성</h1>
+	
+	<c:url value="/ex15/board/write" var="writeLink"></c:url>
+	<form action="${writeLink }" method="post">
+		제목 : <input type="text" name="title" vlaue="새 제목" /> <br />
+		본문 : <textarea name="body" id="" cols="30" rows="10">새 글</textarea>
+		
+		<button>등록</button>
+	</form>
 </body>
 </html>
