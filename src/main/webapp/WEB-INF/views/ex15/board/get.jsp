@@ -10,18 +10,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 게시물등록 -->
+	<!-- 게시물 수정 -->
 	<h1>${board.id }번 게시물</h1>
 	<c:url value="/ex15/board/modify" var="modifyLink"></c:url>
 	<form action="${modifyLink }" method="post">
-	<input type="hidden" name="id" value="${board.id }" />
-	제목 : <input type="text" value="${board.title }" name="title" /> <br />
-	본문 : <textarea cols="30" rows="10" name="body" >${board.body }</textarea> <br />
-	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly /> <br />
-	<button>수정</button> 
+		<input type="hidden" name="id" value="${board.id }" />
+		제목 : <input type="text" value="${board.title }" name="title" /> <br />
+		본문 : <textarea cols="30" rows="10" name="body" >${board.body }</textarea> <br />
+		작성일시 : <input type="datetime-local" value="${board.inserted }" readonly /> <br />
+		<button>수정</button> 
 	</form>
 	
-	<!-- 게시물삭제 -->
+	<!-- 게시물 삭제 -->
 	<c:url value="/ex15/board/remove" var="removeLink" ></c:url>
 	<form action="${removeLink }" method="post">
 		<input type="hidden" name="id" value="${board.id }"/>
