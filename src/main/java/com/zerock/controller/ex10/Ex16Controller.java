@@ -21,4 +21,18 @@ public class Ex16Controller {
 		
 		return "redirect:/ex15/board/" + reply.getBoardId();
 	}
+	
+	@PostMapping("reply/remove")
+	public String removeReply(ReplyDto reply) {
+		boolean success = service.removeReplyById(reply.getId());
+		
+		return "redirect:/ex15/board/" + reply.getBoardId();
+	}
+	
+	@PostMapping("reply/modify")
+	public String modifyReply(ReplyDto reply) {
+		boolean success =service.modifyReply(reply);
+		
+		return "redirect:/ex15/board/" + reply.getBoardId();
+	}
 }
