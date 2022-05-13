@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.zerock.domain.ex02.BoardDto;
 import com.zerock.mapper.ex03.Ex03Mapper;
+import com.zerock.mapper.ex03.Ex04Mapper;
 
 @Service
 public class Ex05Service {
 
 	@Autowired
 	private Ex03Mapper mapper;
+	
+	@Autowired
+	private Ex04Mapper replyMapper;
 	
 	public String getCustomerNameById(int id) {
 		return mapper.selectCustomerNameById(id);
@@ -37,6 +41,10 @@ public class Ex05Service {
 	}
 
 	public boolean removeBoardById(int id) {
+		// 댓글 지우기
+		replyMapper.deleteReplyByBoard(id);
+
+		// 게시물 지우기
 		int cnt = mapper.deleteBoard(id);
 		
 		return cnt == 1;
