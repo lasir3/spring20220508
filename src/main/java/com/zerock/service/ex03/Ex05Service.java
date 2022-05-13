@@ -35,5 +35,11 @@ public class Ex05Service {
 		return cnt == 1;
 	}
 
+	public boolean removeBoardById(int id) {
+		int cnt = mapper.deleteBoard(id);
+		
+		return cnt == 1;
+	}
+
 
 }

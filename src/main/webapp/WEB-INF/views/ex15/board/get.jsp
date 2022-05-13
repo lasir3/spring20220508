@@ -21,9 +21,16 @@
 	
 	본문 : <textarea cols="30" rows="10" name="body" >${board.body }</textarea> <br />
 	
-	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly />
+	작성일시 : <input type="datetime-local" value="${board.inserted }" readonly /> <br />
 	
 	<button>수정</button> 
 	</form>
+	
+	<c:url value="/ex15/board/remove" var="removeLink" ></c:url>
+	<form action="${removeLink }" method="post">
+		<input type="hidden" name="id" value="${board.id }"/>
+		<button>삭제</button>
+	</form>
+	
 </body>
 </html>
