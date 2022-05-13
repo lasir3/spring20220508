@@ -13,16 +13,12 @@
 </head>
 <body>
 
-	
+	<!-- 게시물 작성 -->	
 	<h1>글 작성</h1>
-
-
 	<c:url value="/ex15/board/write" var="writeLink" />	
-	
 	<form action="${writeLink }" method="post">
 		제목 : <input type="text" name="title" value="새 제목" /> <br />
 		본문 : <textarea name="body" id="" cols="30" rows="10">새 글</textarea> <br />
-		
 		<button>등록</button>
 	</form>
 </body>

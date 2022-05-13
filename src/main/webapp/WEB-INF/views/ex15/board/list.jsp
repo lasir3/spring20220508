@@ -14,7 +14,7 @@
 
 	<h1><a href="${writeLink }">글 쓰기</a></h1>
 
-
+	<!-- 게시물 리스트 -->
 	<h1>글 목록</h1>
 	
 	<table class="table">
@@ -35,6 +35,11 @@
 						<a href="${link }">
 							${board.title }
 						</a>
+						
+						<!-- 댓글 갯수 추가 -->
+						<c:if test="${board.numOfReply > 0 }">
+							[${board.numOfReply }]
+						</c:if>
 						
 					</td>
 					<td>${board.title }</td>

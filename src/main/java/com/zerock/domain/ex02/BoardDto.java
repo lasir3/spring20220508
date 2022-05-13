@@ -12,4 +12,7 @@ public class BoardDto {
 	private String body;
 	private LocalDateTime inserted;
 	
+	// 댓글의 갯수
+	private int numOfReply;
+	
 }

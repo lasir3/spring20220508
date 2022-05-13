@@ -11,9 +11,14 @@
     SELECT FirstName FROM Employees WHERE EmployeeId = #{id}
   </select>
   
+  
   <select id="selectBoard" resultType="com.zerock.domain.ex02.BoardDto">
-  	SELECT id, title, body, inserted
-  	FROM Board
+  	SELECT b.id        id, 
+  		   b.title     title, 
+  		   b.inserted  inserted,
+  		   COUNT(r.id) numOfReply
+  	FROM Board b LEFT JOIN Reply r ON b.id = r.board_Id <!-- 댓글갯수 기능을 위해 JOIN 추가 -->
+  	GROUP BY b.id
   	ORDER BY id DESC
   </select>
   
