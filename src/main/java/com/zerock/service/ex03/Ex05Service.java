@@ -42,11 +42,11 @@ public class Ex05Service {
 		return cnt == 1;
 	}
 
-	public boolean addBaord(BoardDto board) {
+	public boolean addBoard(BoardDto board) {
 		board.setInserted(LocalDateTime.now());
 		
 		int cnt = mapper.insertBoard(board);
-				
+		
 		return cnt == 1;
 	}
 
