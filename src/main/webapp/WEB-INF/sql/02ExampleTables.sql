@@ -15,7 +15,5 @@ ALTER TABLE Reply MODIFY COLUMN id INT PRIMARY KEY AUTO_INCREMENT;
 
 ALTER TABLE Reply ADD FOREIGN KEY (board_id) REFERENCES Board(id);
 
-INSERT INTO Reply (board_id, content, inserted) VALUES (42, 'eiefjwoeifj', '2022-05-13 10:49:26');
-
 SELECT * FROM Board;
 SELECT * FROM Reply ORDER BY id DESC;
