@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zerock.domain.ex02.BoardDto;
 import com.zerock.mapper.ex03.Ex03Mapper;
@@ -40,10 +41,15 @@ public class Ex05Service {
 		return cnt == 1;
 	}
 
+	@Transactional // 한번에 처리해야되는 항목
 	public boolean removeBoardById(int id) {
 		// 댓글 지우기
 		replyMapper.deleteReplyByBoard(id);
-
+		
+		// for transaction
+		// exception
+//		int i = 3 / 0;
+		
 		// 게시물 지우기
 		int cnt = mapper.deleteBoard(id);
 		
