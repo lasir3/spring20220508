@@ -26,10 +26,28 @@
 	<button>수정</button> 
 	</form>
 	
+	
+	
 	<c:url value="/ex15/board/remove" var="removeLink" ></c:url>
 	<form action="${removeLink }" method="post">
 		<input type="hidden" name="id" value="${board.id }"/>
 		<button>삭제</button>
+	</form>
+	
+	
+	
+	<hr />
+	
+	
+	
+	
+	<h1>댓글</h1>
+		<c:url value="/ex16/reply/add" var="replyAddLink" />
+	<form action="${replyAddLink }" method="post">
+		<input type="hidden" name="boardId" value="${board.id }" />
+		댓글 : <input type="text" name="content" size="50" /> 
+		
+		<button>쓰기</button>
 	</form>
 	
 </body>
