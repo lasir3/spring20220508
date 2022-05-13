@@ -6,7 +6,25 @@
   <select id="selectCustomerNameById" resultType="String">
     SELECT CustomerName FROM Customers WHERE CustomerId = #{id}
   </select>
+  
   <select id="selectEmployeeNameById" resultType="String">
     SELECT FirstName FROM Employees WHERE EmployeeId = #{id}
   </select>
+  
+  <select id="selectBoard" resultType="com.zerock.domain.ex02.BoardDto">
+  	SELECT id, title, body, inserted
+  	FROM Board
+  	ORDER BY id DESC
+  </select>
+  
+  <select id="getBoard" resultType="com.zerock.domain.ex02.BoardDto">
+  	SELECT id, title, body, inserted FROM Board WHERE id = #{id}
+  </select>
+  
+  <update id="updateBoard">
+  	UPDATE Board
+  	SET title = #{title},
+  		body = #{body}
+  	WHERE id = #{id}
+  </update>
 </mapper>
