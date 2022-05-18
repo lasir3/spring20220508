@@ -42,7 +42,6 @@
 						</c:if>
 						
 					</td>
-					<td>${board.title }</td>
 					<td>${board.inserted }</td>
 				</tr>
 			</c:forEach>
